@@ -1,15 +1,18 @@
-function generateGrid() {
-  const container = document.getElementById("gridContainer");
-  container.innerHTML = '<div class="circle"></div>'; // Clear previous grid
-
+function drawGrid() {
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
   const gridSize = parseInt(document.getElementById("size").value);
   const size = 400 / gridSize;
-  const radius = 200; // Circle radius
+  const radius = 200;
+
+  // Clear canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   let fullyInsideCount = 0;
   let partialCount = 0;
   let totalSquares = 0;
 
+  // Draw the squares
   let x = 0;
   let y = 0;
   for (let xI = 0; xI < gridSize; xI += 1) {
@@ -17,7 +20,6 @@ function generateGrid() {
     for (let yI = 0; yI < gridSize; yI += 1) {
       totalSquares++;
 
-      // Check the 4 corners of the square
       const corners = [
         [x, y],
         [x + size, y],
@@ -29,40 +31,38 @@ function generateGrid() {
         return Math.sqrt((cx - radius) ** 2 + (cy - radius) ** 2) < radius;
       }).length;
 
-      const square = document.createElement("div");
-      square.className = "square";
-      square.style.width = size + "px";
-      square.style.height = size + "px";
-      square.style.left = x + "px";
-      square.style.top = y + "px";
-
       if (insideCorners === 4) {
-        fullyInsideCount++; // Fully inside circle
-        square.style.backgroundColor = "rgba(255, 0, 0, 0.6)"; // Darker red
+        fullyInsideCount++;
+        ctx.fillStyle = "rgba(255, 0, 0, 0.5)";
       } else if (insideCorners > 0) {
-        partialCount++; // Partially overlapping
-        square.style.backgroundColor = "rgba(255, 165, 0, 0.6)"; // Orange
+        partialCount++;
+        ctx.fillStyle = "rgba(0, 255, 0, 0.5)";
+      } else {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
       }
+      ctx.fillRect(x, y, size, size);
 
-      container.appendChild(square);
       y += size;
     }
     x += size;
   }
 
-  // Lower bound (only fully inside squares)
+  // Draw the circle
+  ctx.beginPath();
+  ctx.arc(radius, radius, radius, 0, 2 * Math.PI);
+  ctx.strokeStyle = "black";
+  ctx.stroke();
+
   const lowerBoundOfPi = (fullyInsideCount / totalSquares) * 4;
-  // Upper bound (fully inside + partial squares)
   const upperBoundOfPi = ((fullyInsideCount + partialCount) / totalSquares) * 4;
 
   document.getElementById("result").innerText = `Fully Inside: ${fullyInsideCount}/${totalSquares};
   Partially Inside: ${partialCount}/${totalSquares};
-  Calculation: π = Inside Area / Total Area * 4;
   Estimated π Range: ${lowerBoundOfPi.toFixed(4)} - ${upperBoundOfPi.toFixed(4)}`;
 }
 
-generateGrid(); // Initial call
+drawGrid();
 
-document.getElementById("size").addEventListener("input", (event) => {
-  generateGrid();
+document.getElementById("size").addEventListener("input", () => {
+  drawGrid();
 });

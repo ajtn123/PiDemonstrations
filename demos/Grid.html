@@ -3,25 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Estimate Pi Using Grid</title>
+    <title>Estimate π Using Grid</title>
+    <link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="./Grid.css" />
   </head>
   <body>
     <nav>
-      <ul class="menu">
-        <li><a class="button" href="../index.html">Home</a></li>
-        <li><a class="button" href="./Grid.html">Grid</a></li>
-      </ul>
+      <a class="button" href="../index.html">Home</a>
+      <a class="button" href="./Grid.html">Grid</a>
+      <a class="button" href="./Polygon.html">Polygon</a>
     </nav>
+
     <div>
+      <h1>Estimate π Using Grid</h1>
+
       <label for="size">Grid Size:</label>
       <input id="size" type="range" value="10" min="2" max="100" />
-
-      <div class="container" id="gridContainer">
-        <div class="circle"></div>
-      </div>
-
+      <p>Calculation: π = Inside Area / Total Area * 4;</p>
       <p id="result"></p>
+
+      <canvas id="canvas" width="400" height="400"></canvas>
 
       <script src="./Grid.js"></script>
     </div>
