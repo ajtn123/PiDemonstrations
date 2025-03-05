@@ -38,7 +38,7 @@ function drawGrid() {
         partialCount++;
         ctx.fillStyle = "rgba(0, 255, 0, 0.5)";
       } else {
-        ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+        ctx.fillStyle = "rgba(0, 0, 0, 0)";
       }
       ctx.fillRect(x, y, size, size);
 
@@ -63,6 +63,4 @@ function drawGrid() {
 
 drawGrid();
 
-document.getElementById("size").addEventListener("input", () => {
-  drawGrid();
-});
+document.getElementById("size").addEventListener("input", drawGrid);

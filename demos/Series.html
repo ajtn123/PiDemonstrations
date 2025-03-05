@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculate π using Chudnovsky Algorithm</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="./Series.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bignumber.js@9.1.2/bignumber.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body>
+    <nav>
+      <a class="button" href="../index.html">Home</a>
+      <span class="separator">|</span>
+      <a class="button" href="./Grid.html">Grid</a>
+      <a class="button" href="./Polygon.html">Polygon</a>
+      <a class="button background" href="./Series.html">Series</a>
+    </nav>
+
+    <h1>Calculate π using Chudnovsky Algorithm</h1>
+
+    <div class="container">
+      <p>\[ \frac{1}{\pi} = 12 \sum_{k=0}^{\infty} \frac{(-1)^k (6k)! (545140134k + 13591409)} {(3k)! (k!)^3 (640320)^{3k + \frac{3}{2}}} \]</p>
+    </div>
+
+    <label for="terms">Number of terms:</label>
+    <input id="terms" type="range" value="1" min="1" max="100" />
+    <span id="termCount">5</span>
+    <span class="separator">|</span>
+    <label for="digits">Precision:</label>
+    <input id="digits" type="range" value="50" min="1" max="1000" />
+    <span id="digitCount">5</span>
+
+    <div class="container">
+      <div id="expansion"></div>
+    </div>
+
+    <p class="result">π ≈ <span id="piValue"></span></p>
+
+    <p><a href="https://kyllan.dev/projects/pi_day/pi.html">Check your result.</a></p>
+
+    <script src="./Series.js"></script>
+  </body>
+</html>

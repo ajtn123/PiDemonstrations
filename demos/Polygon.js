@@ -50,6 +50,4 @@ function drawPolygon(ctx, cx, cy, r, n, color) {
 
 calculatePolygons();
 
-document.getElementById("sides").addEventListener("input", () => {
-  calculatePolygons();
-});
+document.getElementById("sides").addEventListener("input", calculatePolygons);

@@ -7,19 +7,38 @@
   </head>
   <body>
     <nav>
-      <a class="button" href="./index.html">Home</a>
+      <a class="button background" href="./index.html">Home</a>
+      <span class="separator">|</span>
       <a class="button" href="./demos/Grid.html">Grid</a>
       <a class="button" href="./demos/Polygon.html">Polygon</a>
+      <a class="button" href="./demos/Series.html">Series</a>
     </nav>
 
     <h1>π Day Activity Page</h1>
+    <p>π Day is an annual celebration of the mathematical constant π, observed on March 14.</p>
 
-    <iframe src="https://en.wikipedia.org/wiki/Pi"></iframe>
+    <div id="date" class="container">
+      <div id="time-since-pi"></div>
+      <div id="current-time"></div>
+      <div id="time-until-pi"></div>
+      <progress id="bar" max="31536000000"></progress>
+    </div>
+
+    <p>See the following interactive demonstrations about the calculation of π.</p>
+    <ul>
+      <a class="button background" href="./demos/Grid.html">Grid</a>
+      <a class="button background" href="./demos/Polygon.html">Polygon</a>
+      <a class="button background" href="./demos/Series.html">Series</a>
+    </ul>
+
+    <p>Read more about π on <a href="https://en.wikipedia.org/wiki/Pi">Wikipedia</a>.</p>
 
     <footer>
       <p>&copy; 2025 <strong>PiDemonstrations</strong> by <em>aoi</em>. Released under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>.</p>
       <p>Source Code: <a href="https://github.com/ajtn123/PiDemonstrations" target="_blank">GitHub/ajtn123/PiDemonstrations</a></p>
-      <p>Project for the <strong>2025 PCS Pi Day Event</strong>.</p>
+      <p>Project for the <strong>2025 PCS π Day Event</strong>.</p>
     </footer>
+
+    <script src="./index.js"></script>
   </body>
 </html>
