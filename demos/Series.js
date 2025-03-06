@@ -42,7 +42,13 @@ function updatePi() {
   document.getElementById("piValue").innerText = chudnovsky(terms, digits);
 }
 
-window.onload = updatePi;
+function updateFormula() {
+  document.getElementById("formula").innerHTML = "\\[ \\frac{1}{\\pi} = 12 \\sum_{k=0}^{\\infty} \\frac{(-1)^k (6k)! (545140134k + 13591409)} {(3k)! (k!)^3 (640320)^{3k + \\frac{3}{2}}} \\]";
+  MathJax.typeset();
+}
+
+updateFormula();
+updatePi();
 
 document.getElementById("terms").addEventListener("input", updatePi);
 document.getElementById("digits").addEventListener("input", updatePi);
