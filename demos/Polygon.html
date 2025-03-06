@@ -14,15 +14,47 @@
       <a class="button" href="./Grid.html">Grid</a>
       <a class="button background" href="./Polygon.html">Polygon</a>
       <a class="button" href="./Series.html">Series</a>
+      <a class="button" href="./Pi1MDP.html">π</a>
     </nav>
 
     <h1>Estimate π using Polygons</h1>
 
+    <p>
+      The first recorded algorithm for rigorously calculating the value of π was a geometrical approach using polygons, devised around 250 BC by the
+      Greek mathematician Archimedes. This polygonal algorithm dominated for over 1,000 years, and as a result π is sometimes referred to as
+      Archimedes's constant. Mathematicians using polygonal algorithms reached 39 digits of π in 1630, a record only broken in 1699 when
+      <a href="./Series.html">infinite series</a> were used to reach 71 digits.*
+    </p>
     <label for="sides">Number of sides:</label>
     <input id="sides" type="range" value="6" min="3" max="20" />
+    <span id="sideCount"></span>
     <p id="result"></p>
 
     <canvas id="canvas" width="1600" height="1600"></canvas>
+
+    <footer>
+      <p>
+        * Read more about the <strong>polygon approximation of π</strong> on
+        <a href="https://en.wikipedia.org/wiki/Pi#Polygon_approximation_era" target="_blank">Wikipedia</a>.
+      </p>
+      <p>
+        Read more about the <strong>history of π calculation</strong> on
+        <a href="https://kyllan.dev/projects/pi_day/pi.html" target="_blank">kyllan.dev</a> and
+        <a href="https://en.wikipedia.org/wiki/Approximations_of_π" target="_blank">Wikipedia</a>.
+      </p>
+    </footer>
+
+    <footer>
+      <p>
+        &copy; 2025 <strong>PiDemonstrations</strong> by <em>aoi</em>. Released under the
+        <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>.
+      </p>
+      <p>Project for the <strong>2025 PCS π Day Event</strong>.</p>
+      <p>
+        Source Code:
+        <a href="https://github.com/ajtn123/PiDemonstrations" target="_blank">GitHub/ajtn123/PiDemonstrations</a>
+      </p>
+    </footer>
 
     <script src="./Polygon.js"></script>
   </body>

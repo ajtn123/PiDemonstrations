@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,10 +14,11 @@
       <a class="button" href="./demos/Grid.html">Grid</a>
       <a class="button" href="./demos/Polygon.html">Polygon</a>
       <a class="button" href="./demos/Series.html">Series</a>
+      <a class="button" href="./demos/Pi1MDP.html">π</a>
     </nav>
 
     <h1>π Day</h1>
-    <p>π Day is an annual celebration of the mathematical constant π, observed on March 14.</p>
+    <p>π Day is an annual celebration of the mathematical constant π, observed on March 14.*</p>
 
     <div id="date" class="container">
       <div id="time-since-pi"></div>
@@ -26,19 +27,36 @@
       <progress id="bar" max="31536000000"></progress>
     </div>
 
+    <div class="container">
+      <span>See how many digits of π you remember:</span><br />
+      <span id="mPi" contenteditable="true" class="cosInput longnum">3.14</span><br />
+      <span id="aPi" class="longnum"></span><br />
+      <span>Correct digits: <span id="correctDigits"></span></span>
+    </div>
+
     <p>See the following interactive demonstrations about the calculation of π.</p>
-    <ul>
+    <nav>
       <a class="button background" href="./demos/Grid.html">Grid</a>
       <a class="button background" href="./demos/Polygon.html">Polygon</a>
       <a class="button background" href="./demos/Series.html">Series</a>
-    </ul>
-
-    <p>Read more about π on <a href="https://en.wikipedia.org/wiki/Pi">Wikipedia</a>.</p>
+      <a class="button background" href="./demos/Pi1MDP.html">1M digits of π</a>
+    </nav>
 
     <footer>
-      <p>&copy; 2025 <strong>PiDemonstrations</strong> by <em>aoi</em>. Released under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>.</p>
-      <p>Source Code: <a href="https://github.com/ajtn123/PiDemonstrations" target="_blank">GitHub/ajtn123/PiDemonstrations</a></p>
+      <p>* Read more about <strong>π Day</strong> on <a href="https://en.wikipedia.org/wiki/Pi_Day" target="_blank">Wikipedia</a>.</p>
+      <p>Read more about <strong>π</strong> on <a href="https://en.wikipedia.org/wiki/Pi" target="_blank">Wikipedia</a>.</p>
+    </footer>
+
+    <footer>
+      <p>
+        &copy; 2025 <strong>PiDemonstrations</strong> by <em>aoi</em>. Released under the
+        <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>.
+      </p>
       <p>Project for the <strong>2025 PCS π Day Event</strong>.</p>
+      <p>
+        Source Code:
+        <a href="https://github.com/ajtn123/PiDemonstrations" target="_blank">GitHub/ajtn123/PiDemonstrations</a>
+      </p>
     </footer>
 
     <script src="./index.js"></script>

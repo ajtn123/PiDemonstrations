@@ -2,6 +2,7 @@ function drawGrid() {
   const canvas = document.getElementById("canvas");
   const ctx = canvas.getContext("2d");
   const gridSize = parseInt(document.getElementById("size").value);
+  document.getElementById("gridSize").innerText = `${gridSize} X ${gridSize}`;
   const size = 400 / gridSize;
   const radius = 200;
 

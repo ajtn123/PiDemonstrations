@@ -16,29 +16,63 @@
       <a class="button" href="./Grid.html">Grid</a>
       <a class="button" href="./Polygon.html">Polygon</a>
       <a class="button background" href="./Series.html">Series</a>
+      <a class="button" href="./Pi1MDP.html">π</a>
     </nav>
 
     <h1>Calculate π using Chudnovsky Algorithm</h1>
-
+    <p>
+      The Chudnovsky algorithm is a fast method for calculating the digits of π, based on Ramanujan's π formulae. Published by the Chudnovsky brothers
+      in 1988. It was used in the world record calculations of 202 trillion digits on June 28, 2024.*
+    </p>
     <div class="container">
-      <div id="formula">\[ \frac{1}{\pi} = 12 \sum_{k=0}^{\infty} \frac{(-1)^k (6k)! (545140134k + 13591409)} {(3k)! (k!)^3 (640320)^{3k + \frac{3}{2}}} \]</div>
+      <div id="formula">
+        \[ \frac{1}{\pi} = 12 \sum_{k=0}^{\infty} \frac{(-1)^k (6k)! (545140134k + 13591409)} {(3k)! (k!)^3 (640320)^{3k + \frac{3}{2}}} \]
+      </div>
     </div>
 
-    <label for="terms">Number of terms:</label>
-    <input id="terms" type="range" value="1" min="1" max="100" />
+    <label for="terms">Calculated terms:</label>
+    <input id="terms" type="range" value="3" min="1" max="75" />
     <span id="termCount">5</span>
     <span class="separator">|</span>
-    <label for="digits">Precision:</label>
-    <input id="digits" type="range" value="50" min="1" max="1000" />
-    <span id="digitCount">5</span>
+    <label for="showError">Show error:</label>
+    <input type="checkbox" id="showError" checked /> <br />
+    <span class="result">Time Used: <span id="timeUsed"></span> ms</span>
+    <span class="separator">|</span>
+    <span for="correctDigits">Correct digits: <span id="correctDigits"></span></span>
 
     <div class="container">
       <div id="expansion"></div>
     </div>
 
-    <p class="result">π ≈ <span id="piValue"></span></p>
+    <p class="result longnum">π ≈ <span id="piValue"></span></p>
 
-    <p><a href="https://kyllan.dev/projects/pi_day/pi.html">Check your result.</a></p>
+    <footer>
+      <p>
+        * Read more about the <strong>Chudnovsky algorithm</strong> on
+        <a href="https://en.wikipedia.org/wiki/Chudnovsky_algorithm" target="_blank">Wikipedia</a>.
+      </p>
+      <p>
+        Read more about the <strong>π calculation using different infinite series</strong> on
+        <a href="https://en.wikipedia.org/wiki/Pi#Infinite_series" target="_blank">Wikipedia</a>.
+      </p>
+      <p>
+        Read more about the <strong>history of π calculation</strong> on
+        <a href="https://kyllan.dev/projects/pi_day/pi.html" target="_blank">kyllan.dev</a> and
+        <a href="https://en.wikipedia.org/wiki/Approximations_of_π" target="_blank">Wikipedia</a>.
+      </p>
+    </footer>
+
+    <footer>
+      <p>
+        &copy; 2025 <strong>PiDemonstrations</strong> by <em>aoi</em>. Released under the
+        <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>.
+      </p>
+      <p>Project for the <strong>2025 PCS π Day Event</strong>.</p>
+      <p>
+        Source Code:
+        <a href="https://github.com/ajtn123/PiDemonstrations" target="_blank">GitHub/ajtn123/PiDemonstrations</a>
+      </p>
+    </footer>
 
     <script src="./Series.js"></script>
   </body>

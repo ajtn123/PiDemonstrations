@@ -3,34 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Estimate π Using Grid</title>
+    <title>1M digits of π</title>
     <link rel="stylesheet" href="../styles.css" />
-    <link rel="stylesheet" href="./Grid.css" />
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="./Pi1MDP.css" />
   </head>
   <body>
     <nav>
       <a class="button" href="../index.html">Home</a>
       <span class="separator">|</span>
-      <a class="button background" href="./Grid.html">Grid</a>
+      <a class="button" href="./Grid.html">Grid</a>
       <a class="button" href="./Polygon.html">Polygon</a>
       <a class="button" href="./Series.html">Series</a>
-      <a class="button" href="./Pi1MDP.html">π</a>
+      <a class="button background" href="./Pi1MDP.html">π</a>
     </nav>
 
-    <div>
-      <h1>Estimate π Using Grid</h1>
-
-      <label for="size">Grid Size:</label>
-      <input id="size" type="range" value="10" min="2" max="100" />
-      <span id="gridSize"></span>
-
-      <div class="container">
-        <p>\[ \pi = \frac {\text{Area of Cirle}} {\text{Area of Circumscribed Square}} \times {4} \]</p>
-      </div>
-      <p id="result"></p>
-
-      <canvas id="canvas" width="400" height="400"></canvas>
+    <h1>Browse through the first 1 million decimal places of π.</h1>
+    <p>
+      From <b><a href="https://github.com/eneko/Pi" target="_blank">GitHub/eneko/Pi</a></b>
+    </p>
+    <div class="container">
+      <p id="pi" class="longnum"></p>
     </div>
 
     <footer>
@@ -45,6 +37,6 @@
       </p>
     </footer>
 
-    <script src="./Grid.js"></script>
+    <script src="./Pi1MPD.js"></script>
   </body>
 </html>

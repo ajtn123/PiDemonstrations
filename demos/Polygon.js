@@ -1,5 +1,6 @@
 function calculatePolygons() {
   const n = parseInt(document.getElementById("sides").value);
+  document.getElementById("sideCount").innerText = n;
   if (n < 3) return;
 
   const lowerBoundOfPi = n * Math.sin(Math.PI / n);
