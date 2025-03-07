@@ -82,6 +82,10 @@ function updatePi() {
   lastTerm = terms;
 }
 
+function updateTerms() {
+  document.getElementById("termCount").innerText = parseInt(document.getElementById("terms").value);
+}
+
 function updateFormula() {
   document.getElementById("formula").innerHTML =
     "\\[ \\frac{1}{\\pi} = 12 \\sum_{k=0}^{\\infty} \\frac{(-1)^k (6k)! (545140134k + 13591409)} {(3k)! (k!)^3 (640320)^{3k + \\frac{3}{2}}} \\]";
@@ -91,6 +95,6 @@ function updateFormula() {
 updateFormula();
 updatePi();
 
-document.getElementById("terms").addEventListener("input", updatePi);
-document.getElementById("digits").addEventListener("input", updatePi);
-document.getElementById("showError").addEventListener("input", updatePi);
+document.getElementById("terms").addEventListener("input", updateTerms);
+document.getElementById("terms").addEventListener("change", updatePi);
+document.getElementById("showError").addEventListener("change", updatePi);
